@@ -221,3 +221,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# HW3: large feature caches (rebuilt by 01_baseline.ipynb)
+outputs/cache/
+
+# HW3: data and large artifacts (too big for git / rebuilt by the notebooks)
+ai-generated-text-detection-hw3-ucu-ai-2026/
+*.zip
+outputs/*.pt
+outputs/*.npy
+# local assistant files and stale copies
+.claude/
+Claude outputs/

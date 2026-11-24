@@ -1,0 +1,27 @@
+time,experiment,model,macro_f1,f1_human,f1_ai,f1_fusion,notes
+2026-11-22T23:21:56,01_baseline,majority_class,0.2062,0.0,0.6185,0.0,trivial reference
+2026-11-22T23:21:56,01_baseline,domain_prior,0.2062,0.0,0.6185,0.0,trivial reference
+2026-11-22T23:23:14,01_baseline,SGD-hinge a=3e-5 | char_wb_3_5,0.8319,0.7664,0.9777,0.7515,vectorizer ablation
+2026-11-22T23:23:44,01_baseline,SGD-hinge a=3e-5 | word_cased_punct,0.8319,0.7654,0.983,0.7474,vectorizer ablation
+2026-11-22T23:24:12,01_baseline,SGD-hinge a=3e-5 | word_std,0.8142,0.7484,0.9761,0.718,vectorizer ablation
+2026-11-22T23:24:24,01_baseline,SGD-hinge a=3e-5 | word+char,0.848,0.7755,0.9841,0.7843,vectorizer ablation
+2026-11-22T23:24:32,01_baseline,SGD_hinge (linear SVM) alpha=1e-05 | word+char,0.8438,0.7648,0.9844,0.7821,parameter search
+2026-11-22T23:24:40,01_baseline,SGD_hinge (linear SVM) alpha=3e-05 | word+char,0.848,0.7755,0.9841,0.7843,parameter search
+2026-11-22T23:24:47,01_baseline,SGD_hinge (linear SVM) alpha=0.0001 | word+char,0.8375,0.7755,0.9831,0.7539,parameter search
+2026-11-22T23:24:52,01_baseline,SGD_modhuber alpha=1e-05 | word+char,0.8409,0.7604,0.9836,0.7788,parameter search
+2026-11-22T23:24:56,01_baseline,SGD_modhuber alpha=3e-05 | word+char,0.8453,0.7628,0.9847,0.7886,parameter search
+2026-11-22T23:25:01,01_baseline,SGD_modhuber alpha=0.0001 | word+char,0.8459,0.7721,0.9847,0.781,parameter search
+2026-11-22T23:26:08,01_baseline,LogReg C=1 | word+char,0.8554,0.7881,0.9867,0.7913,parameter search
+2026-11-22T23:27:24,01_baseline,LogReg C=4 | word+char,0.8584,0.788,0.9878,0.7993,parameter search
+2026-11-22T23:28:38,01_baseline,LogReg C=16 | word+char,0.8556,0.7816,0.9867,0.7986,parameter search
+2026-11-22T23:28:39,01_baseline,ComplementNB alpha=0.03 | word+char,0.6635,0.6759,0.8656,0.4489,parameter search
+2026-11-22T23:28:39,01_baseline,ComplementNB alpha=0.1 | word+char,0.659,0.6709,0.8624,0.4438,parameter search
+2026-11-22T23:28:40,01_baseline,ComplementNB alpha=0.3 | word+char,0.6531,0.6624,0.8539,0.443,parameter search
+2026-11-22T23:29:56,01_baseline,LogReg C=4 no class_weight | word+char,0.8601,0.7875,0.9877,0.8052,class weight ablation
+2026-11-23T21:39:09,02_hf_research,base LogReg C=4 | word+char (01 reproduced),0.8584,0.788,0.9878,0.7993,reproduction of 01 best
+2026-11-23T21:54:16,02_hf_research,a) word+char + features + domain | LogReg C=4,0.882,0.824,0.9887,0.8334,hand-crafted + segment features as extra columns
+2026-11-23T22:17:44,04_encoder,mdeberta | n=500 ep=1 len=512 head+tail,0.5434,0.3105,0.7491,0.5707,microsoft/mdeberta-v3-base
+2026-11-24T00:19:35,04_encoder,mdeberta | n=38737 ep=2 len=512 head+tail,0.9055,0.8489,0.9928,0.8749,microsoft/mdeberta-v3-base
+2026-11-24T20:51:03,05_long_text,mdeberta | first 512,0.8282,0.7015,0.9881,0.7951,inference-time long-text rule
+2026-11-24T20:51:03,05_long_text,mdeberta | chunks mean,0.87,0.7783,0.9873,0.8444,inference-time long-text rule
+2026-11-24T20:51:03,05_long_text,mdeberta | chunks max-fusion,0.8304,0.6909,0.9855,0.8148,inference-time long-text rule

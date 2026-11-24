@@ -25,3 +25,4 @@ time,experiment,model,macro_f1,f1_human,f1_ai,f1_fusion,notes
 2026-11-24T20:51:03,05_long_text,mdeberta | first 512,0.8282,0.7015,0.9881,0.7951,inference-time long-text rule
 2026-11-24T20:51:03,05_long_text,mdeberta | chunks mean,0.87,0.7783,0.9873,0.8444,inference-time long-text rule
 2026-11-24T20:51:03,05_long_text,mdeberta | chunks max-fusion,0.8304,0.6909,0.9855,0.8148,inference-time long-text rule
+2026-11-24T20:54:46,05_final,FINAL ensemble: weighted + class offsets,0.9177,0.8697,0.9944,0.8891,out-of-fold predictions on val
